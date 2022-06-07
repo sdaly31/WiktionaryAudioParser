@@ -163,6 +163,8 @@ class WiktionaryParser(object):
                     audio_tag.extract()
                     if len(audio_links) != 0:
                         audio_links.append(audio_tag)
+                    else:
+                        audio_links.append("else")
                 for nested_list_element in list_element.find_all('ul'):
                     nested_list_element.extract()
                 if list_element.text and not list_element.find('table', {'class': 'audiotable'}):
