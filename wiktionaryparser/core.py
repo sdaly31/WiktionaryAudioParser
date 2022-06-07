@@ -161,7 +161,7 @@ class WiktionaryParser(object):
                 for audio_tag in list_element.find_all('td', {'class': 'audiofile'}):
                     audio_links.append(audio_tag.find('source')['src'])
                     audio_tag.extract()
-                for table_element in list_element.find('table', {'class': 'audiotable'}):
+                for table_element in list_element.find_all('table', {'class': 'audiotable'}):
                     audio_links.append(table_element)
                     for audio_tag_new in table_element.find_all('td', {'class': 'audiofile'}):
                         audio_links.append(table_element)
