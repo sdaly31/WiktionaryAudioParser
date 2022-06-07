@@ -4,8 +4,8 @@ with open('readme.md', 'r') as readme:
   long_desc = readme.read()
 
 setup(
-  name = 'wiktionaryparser',
-  version = '0.0.96',
+  name = 'wiktionaryaudioparser',
+  version = '0.0.97',
   description = 'A tool to parse word data from wiktionary.com into a JSON object',
   long_description = long_desc,
   long_description_content_type='text/markdown',
