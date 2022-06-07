@@ -161,6 +161,8 @@ class WiktionaryParser(object):
                 for audio_tag in list_element.find_all('td', {'class': 'audiofile'}):
                     audio_links.append(audio_tag.find('source')['src'])
                     audio_tag.extract()
+                    if len(audio_links) != 0:
+                        audio_links.append(audio_tag.find('audio')['src'])
                 for nested_list_element in list_element.find_all('ul'):
                     nested_list_element.extract()
                 if list_element.text and not list_element.find('table', {'class': 'audiotable'}):
