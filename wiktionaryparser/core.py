@@ -149,6 +149,8 @@ class WiktionaryParser(object):
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
             list_tag = span_tag.parent
+            audio_links.append(span_tag)
+            audio_links.append(list_tag)
             while list_tag.name != 'ul':
                 list_tag = list_tag.find_next_sibling()
                 if list_tag.name == 'p':
