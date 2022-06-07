@@ -158,7 +158,7 @@ class WiktionaryParser(object):
             for super_tag in list_tag.find_all('sup'):
                 super_tag.clear()
             for list_element in list_tag.find_all('li'):
-                for audio_tag in list_element.find_all('div', {'class': 'mediaContainer'}):
+                for audio_tag in list_element.find_all('div', {'class': 'audiometa'}):
                     audio_links.append(audio_tag.find('source')['src'])
                     audio_tag.extract()
                 for nested_list_element in list_element.find_all('ul'):
