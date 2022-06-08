@@ -87,7 +87,7 @@ class WiktionaryParser(object):
         if content_type == 'etymologies':
             checklist = ['etymology']
         elif content_type == 'pronunciation':
-            checklist = ['pronunciation']
+            checklist = ['pronunciation_2']
         elif content_type == 'definitions':
             checklist = self.PARTS_OF_SPEECH
             if self.language == 'chinese':
