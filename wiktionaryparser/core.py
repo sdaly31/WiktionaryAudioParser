@@ -157,7 +157,9 @@ class WiktionaryParser(object):
                     break
             for super_tag in list_tag.find_all('sup'):
                 super_tag.clear()
+            audio_links.append(list_tag)
             for list_element in list_tag.find_all('li'):
+                audio_links.append(list_element)
                 for audio_tag in list_element.find_all('td', {'class': 'audiofile'}):
                     audio_links.append(audio_tag.find('source')['src'])
                     audio_tag.extract()
