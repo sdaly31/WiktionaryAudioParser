@@ -157,8 +157,9 @@ class WiktionaryParser(object):
                     break
             for super_tag in list_tag.find_all('sup'):
                 super_tag.clear()
-                audio_links.append("     before list_tag     ")
+            audio_links.append("     before list_tag     ")
             audio_links.append(list_tag)
+            audio_links.append("    after list_tag     ")
             for list_element in list_tag.find_all('li'):
                 audio_links.append("     before list_element     ")
                 audio_links.append(list_element)
