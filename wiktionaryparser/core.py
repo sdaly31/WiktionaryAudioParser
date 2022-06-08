@@ -145,12 +145,9 @@ class WiktionaryParser(object):
         audio_links = []
         pronunciation_div_classes = ['mw-collapsible', 'vsSwitcher']
         for pronunciation_index, pronunciation_id, _ in pronunciation_id_list:
-            audio_links.append("for top level")
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
             list_tag = span_tag.parent
-            audio_links.append(span_tag)
-            audio_links.append(list_tag)
             while list_tag.name != 'ul':
                 list_tag = list_tag.find_next_sibling()
                 if list_tag.name == 'p':
@@ -161,21 +158,9 @@ class WiktionaryParser(object):
             for super_tag in list_tag.find_all('sup'):
                 super_tag.clear()
             for list_element in list_tag.find_all('li'):
-                audio_links.append("for list_element")
                 for audio_tag in list_element.find_all('td', {'class': 'audiofile'}):
-                    audio_links.append("for audio_tag")
                     audio_links.append(audio_tag.find('source')['src'])
                     audio_tag.extract()
-                for table_element in list_element.find_all('table', {'class': 'audiotable'}):
-                    audio_links.append("for table_element")
-                    audio_links.append(table_element)
-                    for audio_tag_new in table_element.find_all('td', {'class': 'audiofile'}):
-                        audio_links.append(table_element)
-                        audio_links.append(audio_tag_new)
-                        if len(audio_links) != 0:
-                            audio_links.append(audio_tag_new)
-                        else:
-                            audio_links.append("else")
                 for nested_list_element in list_element.find_all('ul'):
                     nested_list_element.extract()
                 if list_element.text and not list_element.find('table', {'class': 'audiotable'}):
