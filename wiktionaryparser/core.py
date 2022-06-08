@@ -147,7 +147,13 @@ class WiktionaryParser(object):
         for pronunciation_index, pronunciation_id, _ in pronunciation_id_list:
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
+            audio_links.append("     before span_tag     ")
+            audio_links.append(span_tag)
+            audio_links.append("     after span_tag     ")
             list_tag = span_tag.parent
+            audio_links.append("     before first list_tag     ")
+            audio_links.append(list_tag)
+            audio_links.append("     after first list_tag     ")
             while list_tag.name != 'ul':
                 list_tag = list_tag.find_next_sibling()
                 if list_tag.name == 'p':
