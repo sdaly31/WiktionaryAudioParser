@@ -209,6 +209,9 @@ class WiktionaryParser(object):
     def parse_examples(self, word_contents):
         definition_id_list = self.get_id_list(word_contents, 'definitions')
         example_list = []
+        print ("before examples")
+        print ( definition_id_list )
+        print ("after test print examples" )
         for def_index, def_id, def_type in definition_id_list:
             span_tag = self.soup.find_all('span', {'id': def_id})[0]
             table = span_tag.parent
