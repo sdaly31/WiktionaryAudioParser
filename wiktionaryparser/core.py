@@ -140,7 +140,7 @@ class WiktionaryParser(object):
         return json_obj_list
 
     def parse_pronunciations(self, word_contents):
-        pronunciation_id_list = self.get_id_list(word_contents, 'pronunciation')
+        pronunciation_id_list = self.get_id_list(word_contents, 'pronunciation_2')
         pronunciation_list = []
         audio_links = []
         pronunciation_div_classes = ['mw-collapsible', 'vsSwitcher']
