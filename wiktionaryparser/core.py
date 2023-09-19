@@ -144,11 +144,7 @@ class WiktionaryParser(object):
         pronunciation_list = []
         audio_links = []
         pronunciation_div_classes = ['mw-collapsible', 'vsSwitcher']
-        print ("before looooooo")
-        print ( pronunciation_id_list )
-        print ("after test print" )
         for pronunciation_index, pronunciation_id, _ in pronunciation_id_list:
-            print ("in loop")
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
             # audio_links.append("     before span_tag     ")
@@ -209,9 +205,6 @@ class WiktionaryParser(object):
     def parse_examples(self, word_contents):
         definition_id_list = self.get_id_list(word_contents, 'definitions')
         example_list = []
-        print ("before examples")
-        print ( definition_id_list )
-        print ("after test print examples" )
         for def_index, def_id, def_type in definition_id_list:
             span_tag = self.soup.find_all('span', {'id': def_id})[0]
             table = span_tag.parent
