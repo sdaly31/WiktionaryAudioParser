@@ -144,7 +144,9 @@ class WiktionaryParser(object):
         pronunciation_list = []
         audio_links = []
         pronunciation_div_classes = ['mw-collapsible', 'vsSwitcher']
+        print ("before loop")
         for pronunciation_index, pronunciation_id, _ in pronunciation_id_list:
+            print ("in loop")
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
             audio_links.append("     before span_tag     ")
