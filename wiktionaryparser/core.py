@@ -151,13 +151,13 @@ class WiktionaryParser(object):
             print ("in loop")
             pronunciation_text = []
             span_tag = self.soup.find_all('span', {'id': pronunciation_id})[0]
-            audio_links.append("     before span_tag     ")
-            audio_links.append(pronunciation_id)
-            audio_links.append("     after span_tag     ")
+            # audio_links.append("     before span_tag     ")
+            # audio_links.append(pronunciation_id)
+            # audio_links.append("     after span_tag     ")
             list_tag = span_tag.parent
-            audio_links.append("     before first list_tag     ")
-            audio_links.append(list_tag)
-            audio_links.append("     after first list_tag     ")
+            # audio_links.append("     before first list_tag     ")
+            # audio_links.append(list_tag)
+            # audio_links.append("     after first list_tag     ")
             while list_tag.name != 'ul':
                 list_tag = list_tag.find_next_sibling()
                 if list_tag.name == 'p':
@@ -167,9 +167,9 @@ class WiktionaryParser(object):
                     break
             for super_tag in list_tag.find_all('sup'):
                 super_tag.clear()
-            audio_links.append("     before list_tag     ")
-            audio_links.append(list_tag)
-            audio_links.append("    after list_tag     ")
+            # audio_links.append("     before list_tag     ")
+            # audio_links.append(list_tag)
+            # audio_links.append("    after list_tag     ")
             for list_element in list_tag.find_all('li'):
                 audio_links.append("     before list_element     ")
                 audio_links.append(list_element)
