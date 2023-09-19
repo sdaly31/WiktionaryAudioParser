@@ -145,6 +145,8 @@ class WiktionaryParser(object):
         audio_links = []
         pronunciation_div_classes = ['mw-collapsible', 'vsSwitcher']
         print ("before loop")
+        print ( pronunciation_id_list )
+        print ("after test print" )
         for pronunciation_index, pronunciation_id, _ in pronunciation_id_list:
             print ("in loop")
             pronunciation_text = []
